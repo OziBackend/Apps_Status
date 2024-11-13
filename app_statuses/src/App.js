@@ -2,6 +2,8 @@ import './App.css';
 import './bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 import WindowsApp from './components/WindowsApps';
+import LinuxApp from './components/LinuxApps';
+
 
 function App() {
   // Define the arrays
@@ -10,6 +12,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <WindowsApp/>
+        <LinuxApp/>
       </header>
     </div>
   );
