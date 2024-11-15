@@ -43,7 +43,7 @@ const AppList = ({ ip, appnames, appapis }) => {
             <td style={{border: '1px solid gray'}}>{appList[key].status === 200 ? <span style={{color: 'green'}}>&#x2714;</span> : appList[key].status === 'timeout' || appList[key].status === 400 || appList[key].status === 404 ? <span style={{color: 'red'}}>&#x2718;</span> : <span style={{color: 'red'}}>&#x2718;</span>}</td>
             <td style={{border: '1px solid gray'}}>
                 <Link 
-                to={`/details/${appList[key].name}`}
+                to={`/${appList[key].name}`}
                 >
                     <FontAwesomeIcon icon={faInfoCircle} />
                 </Link>

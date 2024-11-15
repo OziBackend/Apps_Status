@@ -1,20 +1,31 @@
 import './App.css';
 import './bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import { Route, Routes } from 'react-router-dom'; // Import Router components
 
-import WindowsApp from './components/WindowsApps';
-import LinuxApp from './components/LinuxApps';
+//Admin and Home Page
+import Admin from './components/Admin';
+import HomePage from './components/homepage/HomePage';
 
+import Navbar from './components/homepage/Navbar'
 
 function App() {
   // Define the arrays
  
   return (
-    <div className="App">
-      <header className="App-header">
-        <WindowsApp/>
-        <LinuxApp/>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/homepage/*" element={<Navbar/>} />
+      </Routes>
+      <div className="App">
+        <header className="App-header">
+          <Routes> {/* Use Routes instead of Switch */}
+            <Route path="/" element={<Admin />} />
+            <Route path="/homepage/*" element={<HomePage />} />
+            
+          </Routes>
+        </header>
+      </div>
+    </>
   );
 }
 

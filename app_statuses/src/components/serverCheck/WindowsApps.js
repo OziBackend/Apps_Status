@@ -1,17 +1,17 @@
 import React from 'react';
-import '../bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import '../../bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
-import AppList from './modules/AppList';
+import AppList from '../modules/AppList';
 
 // for server 161.97.164.28
-import appNames from './datavalues/Windows/appnames';
-import appAPIs from './datavalues/Windows/appapis';
+import appNames from '../datavalues/Windows/appnames';
+import appAPIs from '../datavalues/Windows/appapis';
 // for server 213.136.75.99
-import appNames2 from './datavalues/Windows/appnames2';
-import appAPIs2 from './datavalues/Windows/appapis2';
+import appNames2 from '../datavalues/Windows/appnames2';
+import appAPIs2 from '../datavalues/Windows/appapis2';
 // for server 164.68.111.220
-import appNames3 from './datavalues/Windows/appnames3';
-import appAPIs3 from './datavalues/Windows/appapis3';
+import appNames3 from '../datavalues/Windows/appnames3';
+import appAPIs3 from '../datavalues/Windows/appapis3';
 
 const WindowsApp = () => {
     return (

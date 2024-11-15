@@ -1,0 +1,16 @@
+.NavProp {
+    position: relative;
+  }
+
+.NavProp ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /* background-color: #333; */
+  }
+
+.NavProp li {
+    float: left;
+    margin: 5px 15px
+  }
