@@ -1,0 +1,42 @@
+/* Add this CSS to your styles file */
+.sidebar {
+    position: fixed; /* Fixes the sidebar to the left */
+    left: 0;        /* Aligns it to the left side */
+    top: 5;         /* Aligns it to the top */
+    width: 300px;   /* Sets a width for the sidebar */
+    height: 93%;   /* Makes the sidebar full height */
+    background-color: #272525; /* Background color for visibility */
+    padding: 10px;  /* Adds some padding */
+    margin-right: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Optional shadow for depth */
+}
+
+.sidebar div {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    width: 280px;
+    padding: 5px 0px;    
+}
+
+.sidebar div :hover {
+    color: rgb(102, 102, 212);
+    text-decoration: underline;
+    cursor:pointer;
+    
+}
+
+.sidebar select {
+    width: 100%; /* Adjust the width as needed */
+    padding: 10px; /* Add some padding for better appearance */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 20px; /* Font size */
+    background-color: #d6e1ec; /* Background color */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.sidebar select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}

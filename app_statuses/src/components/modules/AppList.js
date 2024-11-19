@@ -35,19 +35,12 @@ const AppList = ({ ip, appnames, appapis }) => {
         <tr>
             <th style={{border: '1px solid gray', width: '400px'}}><i>AppName</i></th>
             <th style={{border: '1px solid gray', width: '100px'}}><i>Status</i></th>
-            <th style={{border: '1px solid gray', width: '100px'}}><i>Details</i></th>
         </tr>
         {Object.keys(appList).map(key => (
           <tr key={key}>
             <td style={{border: '1px solid gray', fontSize: '20px'}}>{appList[key].name}</td>
             <td style={{border: '1px solid gray'}}>{appList[key].status === 200 ? <span style={{color: 'green'}}>&#x2714;</span> : appList[key].status === 'timeout' || appList[key].status === 400 || appList[key].status === 404 ? <span style={{color: 'red'}}>&#x2718;</span> : <span style={{color: 'red'}}>&#x2718;</span>}</td>
-            <td style={{border: '1px solid gray'}}>
-                <Link 
-                to={`/${appList[key].name}`}
-                >
-                    <FontAwesomeIcon icon={faInfoCircle} />
-                </Link>
-            </td>
+            
           </tr>
         ))}
       </table>

@@ -18,8 +18,7 @@ const Header = (props) => {
                           className="d-inline-block align-top"
                         />
                       </li>
-                      <li><h1>ADMIN PANEL</h1></li>
-                      <li onClick={()=>{console.log("servers")}}><b>SERVERS</b></li>
+                      <li onClick={()=>{console.log("servers")}}><h2>OZI APPS SERVERS</h2></li>
                     </ul>
                   </Navbar.Brand>
                 </Container>
