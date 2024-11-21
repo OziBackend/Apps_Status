@@ -1,5 +1,8 @@
 /* Add this CSS to your styles file */
 .sidebar {
+    color: white;
+    text-align: center;
+    font-size: 40px;
     position: fixed; /* Fixes the sidebar to the left */
     left: 0;        /* Aligns it to the left side */
     top: 5;         /* Aligns it to the top */
@@ -9,6 +12,9 @@
     padding: 10px;  /* Adds some padding */
     margin-right: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Optional shadow for depth */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures space between items and pushes logout to the bottom */
 }
 
 .sidebar div {
@@ -34,9 +40,29 @@
     font-size: 20px; /* Font size */
     background-color: #d6e1ec; /* Background color */
     cursor: pointer; /* Change cursor to pointer */
+    margin-bottom: 10px;
 }
 
 .sidebar select:focus {
     border-color: #007bff; /* Change border color on focus */
     outline: none; /* Remove default outline */
+}
+
+.logout-container {
+    margin-top: auto; /* Pushes the logout button to the bottom */
+    padding: 10px; /* Adds some padding around the button */
+}
+
+.logout-button {
+    background-color: #ff4d4d; /* Red background for logout button */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+}
+
+.logout-button:hover {
+    background-color: #ff1a1a; /* Darker red on hover */
 }

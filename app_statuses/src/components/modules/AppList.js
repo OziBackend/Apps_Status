@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 
 const AppList = ({ ip, appnames, appapis }) => {
   const [appList, setAppList] = useState({});

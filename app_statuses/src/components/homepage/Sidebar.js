@@ -9,7 +9,7 @@ import appNames3 from '../datavalues/Windows/appnames3';
 //linux app names
 import linuxAppNames from '../datavalues/Linux/linuxappnames';
 
-function Sidebar() {
+function Sidebar({sidebarShow}) {
     const navigate = useNavigate();
 
     // Separate state for each dropdown
@@ -47,10 +47,17 @@ function Sidebar() {
         navigate(`/homepage/linux/${event.target.value}`);
     };
 
+    const handleLogout = () => {
+        sidebarShow(false)
+        localStorage.removeItem('user'); // Remove user data from local storage
+        console.log("Logged out");
+        navigate('/'); // Redirect to login page after logout
+    };
+
     return (
         <>
             <div className="sidebar">
-                WINDOWS
+                <b>WINDOWS</b>
                 <select value={selectedWindowsApp1} onChange={handleSelectWindowsApp1}>
                     <option value="" >161.97.164.28</option>
                     {appNames.map((name, index) => (
@@ -70,13 +77,18 @@ function Sidebar() {
                     ))}
                 </select>
                 <br/>
-                LINUX
+                <b>LINUX</b>
+                
                 <select value={selectedLinuxApp} onChange={handleSelectLinuxApp}>
                     <option value="" >46.250.238.182</option>
                     {linuxAppNames.map((name, index) => (
                         <option key={index} value={name}>{name}</option>
                     ))}
                 </select>
+                <br/>
+                <div className="logout-container">
+                    <button className="logout-button" onClick={handleLogout}>Logout</button>
+                </div>
             </div>
         </>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import '../../bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
 
 import AppList from '../modules/AppList';
@@ -15,15 +14,9 @@ import appNames3 from '../datavalues/Windows/appnames3';
 import appAPIs3 from '../datavalues/Windows/appapis3';
 
 const WindowsApp = () => {
-    const navigate = useNavigate(); // Initialize useNavigate
 
     return (
         <div>
-            <div style={{ position: 'relative', marginBottom: '20px' }}>
-                <button onClick={() => navigate(-1)} className="btn btn-secondary" style={{ position: 'absolute', top: '0', left: '0' }}>Back</button>
-                <button onClick={() => window.location.reload()} className="btn btn-primary" style={{ position: 'absolute', top: '0', right: '0' }}>Refresh</button>
-            </div>
-            <br/>
             <h1>Windows VM Apps</h1>
             <div className="row">
                 <div className="col-md-6">
