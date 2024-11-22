@@ -1,6 +1,6 @@
 import './App.css';
 import './bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
-import { Route, Routes, Navigate } from 'react-router-dom'; // Import Router components
+import { Route, Routes, Navigate, useLocation } from 'react-router-dom'; // Import Router components
 import { useState, useEffect } from 'react'; // Import useState
 
 //Admin and Home Page
@@ -22,32 +22,40 @@ const PrivateRoute = ({ element }) => {
 };
 
 function App() {
-  const [showSideBar, setShowSideBar]=useState(false)
-  const showHideSideBar=(status)=>{
-    setShowSideBar(status)
-  }
+  const location = useLocation(); // Get the current location
+  const [showSideBar, setShowSideBar] = useState(false);
+  
+  const showHideSideBar = (status) => {
+    setShowSideBar(status);
+  };
+
   const handleLogin = (userData) => {
-    showHideSideBar(true)
+    showHideSideBar(true);
     localStorage.setItem('user', JSON.stringify(userData)); // Store user data in local storage
   };
-  // useEffect(showHideSideBar(false),[])
+
+  // Check if the current route is not '/homepage' to hide the sidebar
+  useEffect(() => {
+    if (location.pathname !== '/') {
+      showHideSideBar(true);
+    }
+  }, [location.pathname]); // Run effect when the pathname changes
+
   return (
     <>
-      <Navbar/>
-      {showSideBar && <Sidebar sidebarShow={setShowSideBar}/>}
+      <Navbar />
+      
+      {showSideBar && <Sidebar sidebarShow={setShowSideBar} />}
       <div className="App">
         <header className="App-header">
           <Routes>
             <Route path="/" element={
               <>
-                {/* {showHideSideBar(false)} */}
-              
                 <Admin onLogin={handleLogin} />
               </>
-              } />
+            } />
             <Route path="/homepage/*" element={<PrivateRoute element={<>
-              {/* {showHideSideBar(true)} */}
-              <HomePage/>
+              <HomePage />
               </>} />} />
           </Routes>
         </header>

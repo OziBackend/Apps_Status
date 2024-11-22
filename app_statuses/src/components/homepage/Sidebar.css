@@ -7,7 +7,7 @@
     left: 0;        /* Aligns it to the left side */
     top: 5;         /* Aligns it to the top */
     width: 300px;   /* Sets a width for the sidebar */
-    height: 93%;   /* Makes the sidebar full height */
+    height: 92.8%;   /* Makes the sidebar full height */
     background-color: #272525; /* Background color for visibility */
     padding: 10px;  /* Adds some padding */
     margin-right: 20px;
@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; /* Ensures space between items and pushes logout to the bottom */
+    margin-top: 86px;
 }
 
 .sidebar div {
