@@ -53,7 +53,7 @@ function Windows() {
     return (
         <div>
             <Routes>
-                <Route path="/Romantic Love Frames" element={<RomanticFrames/>} />
+                <Route path="/Romantic Love Frames/*" element={<RomanticFrames/>} />
             </Routes>
             {isDropdownVisible && ( // Conditional rendering of the dropdown
                 <div>

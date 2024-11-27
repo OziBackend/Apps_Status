@@ -1,5 +1,16 @@
+.Adminpage {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #282c34;
+  padding-top: 86px;
+}
 .App {
   text-align: center;
+  background-color: #282c34;
   padding-top: 86px;
   padding-left: 300px;
 }
@@ -21,7 +32,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }

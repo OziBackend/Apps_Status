@@ -34,32 +34,44 @@ function App() {
     localStorage.setItem('user', JSON.stringify(userData)); // Store user data in local storage
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('user'); // Remove user data from local storage
+    console.log("Logged out");
+  };
+
   // Check if the current route is not '/homepage' to hide the sidebar
   useEffect(() => {
     if (location.pathname !== '/') {
       showHideSideBar(true);
+    }else{
+      handleLogout()
     }
   }, [location.pathname]); // Run effect when the pathname changes
 
   return (
     <>
       <Navbar />
-      
-      {showSideBar && <Sidebar sidebarShow={setShowSideBar} />}
-      <div className="App">
-        <header className="App-header">
-          <Routes>
-            <Route path="/" element={
-              <>
+      <Routes>
+          <Route path="/" element={
+              <div className='Adminpage'>
                 <Admin onLogin={handleLogin} />
-              </>
+              </div>
             } />
-            <Route path="/homepage/*" element={<PrivateRoute element={<>
-              <HomePage />
-              </>} />} />
-          </Routes>
-        </header>
-      </div>
+
+            <Route path="/homepage/*" element={<PrivateRoute element={
+              <>
+                {showSideBar && 
+                <Sidebar 
+                sidebarShow={setShowSideBar} handleLogout={handleLogout}/>}
+                <div className="App">
+                  <header className="App-header">
+                    <HomePage />
+                    
+                  </header>
+                </div>
+              </>
+            } />} />
+      </Routes>
     </>
   );
 }

@@ -9,7 +9,7 @@ import appNames3 from '../datavalues/Windows/appnames3';
 //linux app names
 import linuxAppNames from '../datavalues/Linux/linuxappnames';
 
-function Sidebar({sidebarShow}) {
+function Sidebar({sidebarShow, handleLogout}) {
     const navigate = useNavigate();
 
     // Separate state for each dropdown
@@ -29,28 +29,26 @@ function Sidebar({sidebarShow}) {
 
     const handleSelectWindowsApp1 = (event) => {
         setSelectedWindowsApp1(event.target.value);
-        navigate(`/homepage/windows/${event.target.value}`);
+        navigate(`/homepage/windows/${event.target.value}/*`);
     };
 
     const handleSelectWindowsApp2 = (event) => {
         setSelectedWindowsApp2(event.target.value);
-        navigate(`/homepage/windows/${event.target.value}`);
+        navigate(`/homepage/windows/${event.target.value}/*`);
     };
 
     const handleSelectWindowsApp3 = (event) => {
         setSelectedWindowsApp3(event.target.value);
-        navigate(`/homepage/windows/${event.target.value}`);
+        navigate(`/homepage/windows/${event.target.value}/*`);
     };
 
     const handleSelectLinuxApp = (event) => {
         setSelectedLinuxApp(event.target.value);
-        navigate(`/homepage/linux/${event.target.value}`);
+        navigate(`/homepage/linux/${event.target.value}/*`);
     };
 
-    const handleLogout = () => {
-        sidebarShow(false)
-        localStorage.removeItem('user'); // Remove user data from local storage
-        console.log("Logged out");
+    const Logout = () => {
+        handleLogout();
         navigate('/'); // Redirect to login page after logout
     };
 
@@ -87,7 +85,7 @@ function Sidebar({sidebarShow}) {
                 </select>
                 <br/>
                 <div className="logout-container">
-                    <button className="logout-button" onClick={handleLogout}>Logout</button>
+                    <button className="logout-button" onClick={Logout}>Logout</button>
                 </div>
             </div>
         </>
