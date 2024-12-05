@@ -154,7 +154,7 @@ const RomanticFrames = () => {
                         <div className='col-1' style={{padding:'0px'}}></div>
                         <div className='topLeftContainer col-5'>
                             <p>CATEGORIES</p>
-                            <div className='row'>
+                            <div className='row' style={{height:'100%'}}>
                                 <div className='col-1' style={{'fontSize':'16px'}}>
                                 
                                         <b>Categories</b>
@@ -298,7 +298,7 @@ const RomanticFrames = () => {
                                     </div>
                                 )}
                             </div>
-                            <div style={{ display: 'flex', overflowX: 'auto', whiteSpace: 'nowrap', width:'1000px' }}>
+                            <div style={{ display: 'flex', overflowX: 'auto', whiteSpace: 'nowrap', width:'100%' }}>
                                 {frames2.slice(0, 10).map(frame => (
                                     <img 
                                         key={frame._id} 
