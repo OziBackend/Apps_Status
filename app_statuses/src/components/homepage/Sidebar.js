@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Sidebar.css'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 //windows app names
 import appNames from '../datavalues/Windows/appnames';
@@ -11,6 +11,7 @@ import linuxAppNames from '../datavalues/Linux/linuxappnames';
 
 function Sidebar({sidebarShow, handleLogout}) {
     const navigate = useNavigate();
+    const location = useLocation();
 
     // Separate state for each dropdown
     const [selectedWindowsApp1, setSelectedWindowsApp1] = useState('');
@@ -25,26 +26,26 @@ function Sidebar({sidebarShow, handleLogout}) {
         setSelectedWindowsApp2('');
         setSelectedWindowsApp3('');
         setSelectedLinuxApp('');
-    }, [window.location.pathname]); // Dependency on pathname
+    }, [location.pathname]); // Dependency on pathname
 
     const handleSelectWindowsApp1 = (event) => {
         setSelectedWindowsApp1(event.target.value);
-        navigate(`/homepage/windows/${event.target.value}/*`);
+        navigate(`/homepage/windows/${event.target.value}`);
     };
 
     const handleSelectWindowsApp2 = (event) => {
         setSelectedWindowsApp2(event.target.value);
-        navigate(`/homepage/windows/${event.target.value}/*`);
+        navigate(`/homepage/windows/${event.target.value}`);
     };
 
     const handleSelectWindowsApp3 = (event) => {
         setSelectedWindowsApp3(event.target.value);
-        navigate(`/homepage/windows/${event.target.value}/*`);
+        navigate(`/homepage/windows/${event.target.value}`);
     };
 
     const handleSelectLinuxApp = (event) => {
         setSelectedLinuxApp(event.target.value);
-        navigate(`/homepage/linux/${event.target.value}/*`);
+        navigate(`/homepage/linux/${event.target.value}`);
     };
 
     const Logout = () => {

@@ -5,6 +5,7 @@ import BundlesDetails from './BundlesDetails';
 import FramesDetails from './FramesDetails';
 
 import EditCategory from './EditCategory'
+import NewCategory from './AddCategory';
 
 
 const CategoriesDetails = ({ categories, bundles, frames }) => {
@@ -43,6 +44,11 @@ const CategoriesDetails = ({ categories, bundles, frames }) => {
 
         navigate('/homepage/windows/Romantic Love Frames/categories/edit')
     }
+    const addCategory=()=>{
+        setShowCategories(false)
+
+        navigate('/homepage/windows/Romantic Love Frames/categories/add')
+    }
 
     const renderCategoryList = (categories, bundles, frames) => (
         <ol>
@@ -76,7 +82,6 @@ const CategoriesDetails = ({ categories, bundles, frames }) => {
             setShowCategories(true)
         else
             setShowCategories(false)
-        console.log('=======>',showCategories);
     }, [location])
 
     return (
@@ -107,12 +112,21 @@ const CategoriesDetails = ({ categories, bundles, frames }) => {
                         />
                     }
                 />
+                <Route 
+                    path="/add/*"
+                    element={
+                        <NewCategory/>
+                    }
+                />
             </Routes>
             
             {showCategories && (
                 <>
                     <div>
-                        <button className='btn btn-info'>+ Add New Category</button>
+                        <button 
+                            className='btn btn-info'
+                            onClick={()=>{addCategory()}}
+                        >+ Add New Category</button>
                     </div>
                     <br/>
                     <div className="row">

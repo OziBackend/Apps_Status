@@ -9,7 +9,8 @@ const linuxAppAPIs = [
     'http://46.250.238.182:8007/identifiers/v2.0/checkserver',
     // 'http://46.250.238.182:8008/image_matting/v1.0/checkserver',
     'http://46.250.238.182:8009/bp_report/v1.0/checkserver',
-    'http://46.250.238.182:8010/bg_removal/checkserver'
+    'http://46.250.238.182:8010/bg_removal/checkserver',
+    'http://46.250.238.182:8011/bg_removal2/checkserver'
 ]; // Array of APIs
 
 export default linuxAppAPIs;

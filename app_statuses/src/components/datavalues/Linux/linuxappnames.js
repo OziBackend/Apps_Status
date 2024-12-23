@@ -9,7 +9,8 @@ const linuxAppNames = [
     'Identifiers App (Dog, Insect, Spider)',
     // 'Image Matting APIs',
     'Blood Pressure Report Making App',
-    'BG Remover'
+    'BG Remover',
+    'BG Remover 2'
 ]; // Array of names
 
 export default linuxAppNames;

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useLocation,useNavigate, Routes, Route } from 'react-router-dom';
 
 import EditFrame from './EditFrame';
+import NewFrame from './AddFrames';
 
 const FramesDetails = ({ frames }) => {
     const location = useLocation();
@@ -14,6 +15,12 @@ const FramesDetails = ({ frames }) => {
         setFrameInfo(frameData)
         setShowFrames(false)
         navigate(location.pathname + '/edit')
+    }
+
+    const addFrame=()=>{
+        // setFrameInfo(frameData)
+        setShowFrames(false)
+        navigate(location.pathname + '/add')
     }
 
     const renderFramesList = (frames) => (
@@ -62,11 +69,22 @@ const FramesDetails = ({ frames }) => {
                         />
                     }
                 />
+                <Route 
+                    path="/add/*"
+                    element={
+                        <NewFrame
+                            frameInfo={frameInfo}
+                        />
+                    }
+                />
             </Routes>
             {showFrames && (
                 <>
                     <div>
-                        <button className='btn btn-info'>+ Add New Frame/s</button>
+                        <button 
+                            className='btn btn-info'
+                            onClick={()=>{addFrame()}}
+                        >+ Add New Frame/s</button>
                     </div>
                     <br/>
                     <div className="row">
