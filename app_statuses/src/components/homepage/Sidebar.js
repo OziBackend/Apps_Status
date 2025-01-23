@@ -7,7 +7,7 @@ import appNames from '../datavalues/Windows/appnames';
 import appNames2 from '../datavalues/Windows/appnames2';
 import appNames3 from '../datavalues/Windows/appnames3';
 //linux app names
-import linuxAppNames from '../datavalues/Linux/linuxappnames';
+import linuxAppNames from '../datavalues/Linux - Flask/linuxappnames';
 
 function Sidebar({sidebarShow, handleLogout}) {
     const navigate = useNavigate();

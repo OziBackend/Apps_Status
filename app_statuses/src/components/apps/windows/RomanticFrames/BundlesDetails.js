@@ -61,6 +61,7 @@ const BundlesDetails = ({ bundles, frames }) => {
         </ol>
     );
     useEffect(()=>{
+        // console.log(categoryId);
         if(location.pathname === "/homepage/windows/Romantic%20Love%20Frames/categories/bundles")
             setShowBundles(true)
         else

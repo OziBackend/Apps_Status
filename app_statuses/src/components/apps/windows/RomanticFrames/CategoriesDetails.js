@@ -91,6 +91,7 @@ const CategoriesDetails = ({ categories, bundles, frames }) => {
                     path="/bundles/*"
                     element={
                         <BundlesDetails
+                            // categoryId={category}
                             bundles={bundlesData}
                             frames={frames}
                         />
